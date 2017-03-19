@@ -120,3 +120,8 @@ buildNumber.properties
 !.vscode/extensions.json
 
 # End of https://www.gitignore.io/api/java,maven,eclipse,visualstudiocode
+
+# Own additions
+
+# Overwrite above settings
+.vscode/
