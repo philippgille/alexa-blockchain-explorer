@@ -1,7 +1,7 @@
-HelloWorldIntent say hello
-HelloWorldIntent say hello world
-HelloWorldIntent hello
-HelloWorldIntent say hi
-HelloWorldIntent say hi world
+HelloWorldIntent sag hallo
+HelloWorldIntent sag hallo Welt
+HelloWorldIntent hallo
+HelloWorldIntent sag hi
+HelloWorldIntent sag hi Welt
 HelloWorldIntent hi
-HelloWorldIntent how are you
+HelloWorldIntent wie geht es dir
