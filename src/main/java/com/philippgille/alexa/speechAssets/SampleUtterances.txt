@@ -106,3 +106,14 @@ TransactionCountIntent wie viele Transaktionen waren im neuesten Block der Bitco
 TransactionCountIntent wie viele Transaktionen waren im neuesten Block der Bitcoin Blockchain enthalten
 TransactionCountIntent wie viele Transaktionen waren Teil des letzten Blocks der Bitcoin Blockchain
 TransactionCountIntent wie viele Transaktionen waren Teil des neuesten Blocks der Bitcoin Blockchain
+
+WhatIsBlockchainIntent definiere Blockchain
+WhatIsBlockchainIntent definiere mir Blockchain
+WhatIsBlockchainIntent definiere mir was eine Blockchain ist
+WhatIsBlockchainIntent definiere was eine Blockchain ist
+WhatIsBlockchainIntent erkläre mir Blockchain
+WhatIsBlockchainIntent erkläre mir was eine Blockchain ist
+WhatIsBlockchainIntent erläutere mir Blockchain
+WhatIsBlockchainIntent erläutere mir was eine Blockchain ist
+WhatIsBlockchainIntent was ist Blockchain
+WhatIsBlockchainIntent was ist eine Blockchain

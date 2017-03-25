@@ -60,6 +60,8 @@ public class BlockchainExplorerSpeechlet implements Speechlet {
         	return getBlockCountResponse();
         } else if ("TransactionCountIntent".equals(intentName)) {
         	return getTransactionCountResponse();
+        } else if ("WhatIsBlockchainIntent".equals(intentName)) {
+        	return getWhatIsBlockchainResponse();
         } else if ("AMAZON.HelpIntent".equals(intentName)) {
             return getHelpResponse();
         } else {
@@ -148,6 +150,36 @@ public class BlockchainExplorerSpeechlet implements Speechlet {
 	    // Create the Simple card content.
 	    SimpleCard card = new SimpleCard();
 	    card.setTitle("Transaktionsanzahl im letzten Block der Bitcoin Blockchain");
+	    card.setContent(speechText);
+	
+	    // Create the plain text output.
+	    PlainTextOutputSpeech speech = new PlainTextOutputSpeech();
+	    speech.setText(speechText);
+	
+	    return SpeechletResponse.newTellResponse(speech, card);
+	}
+
+	/**
+	 * Creates a {@code SpeechletResponse} for the what is a blockchain intent.
+	 *
+	 * @return SpeechletResponse spoken and visual response for the given intent
+	 */
+	private SpeechletResponse getWhatIsBlockchainResponse() {
+		String speechText = "Eine Blockchain ist eine verteilte Datenbank, welche aus aneinandergereihten sogenannten Blöcken besteht." +
+				" Jeder Block enthält einen Zeitstempel und einen Verweis auf den vorigen Block." +
+				" Die Daten eines Blocks sind Transaktionen, welche von Teilnehmern des Blockchain-Netzwerks getätigt werden." +
+				" Alle jemals getätigten Transaktionen sind öffentlich einsehbar und verifizierbar." +
+				" Außerdem sind Blockchains so designt, dass die Daten bestehender Blöcke im Nachinein nicht mehr geändert werden können." +
+				" Blockchains werden durch ein Peer-to-Peer Netzwerk autonom verwaltet, das heißt es gibt keine zentrale Entität, welche eine Blockchain steuert." +
+				" Durch diese vorgenannten Punkte wird erreicht, dass sich zwei Parteien, zwischen denen eine Transaktion stattfindet, weder gegenseitig, noch einer zentralen Entität vertrauen müssen." +
+				" Durch einen Proof-of-Work Algorithmus können Double-Spends verhindert und auf dezentrale Art und Weise ein Konsens im Netzwerk geschaffen werden." +
+				" Die erste Blockchain wurde entwickelt von Satoshi Nakamoto und für die ebenfalls von ihm entwickelte digitale Währung Bitcoin verwendet." +
+				" Sie wird aufgrund ihrer Reife, der höchsten Hashrate und den vielen erfahrenen Core-Entwicklern als sicherste Blockchain angesehen." +
+				" Bitcoin ist außerdem die digitale Währung mit der höchsten Marktkapitalisierung.";
+	
+	    // Create the Simple card content.
+	    SimpleCard card = new SimpleCard();
+	    card.setTitle("Was ist eine Blockchain?");
 	    card.setContent(speechText);
 	
 	    // Create the plain text output.

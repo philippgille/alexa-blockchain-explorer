@@ -7,6 +7,9 @@
       "intent": "TransactionCountIntent"
     },
     {
+      "intent": "WhatIsBlockchainIntent"
+    },
+    {
       "intent": "AMAZON.HelpIntent"
     }
   ]
