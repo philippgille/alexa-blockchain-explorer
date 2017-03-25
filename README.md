@@ -9,10 +9,13 @@ Usage Examples
 ### One-shot model:
 
 ```
-User: "Alexa, frage Block Explorer wie lang ist die Bitcoin Blockchain?"
+User: "Alexa, frage Block Explorer: Was ist eine Blockchain?"
+Alexa: "Eine Blockchain ist eine verteilte Datenbank, welche aus aneinandergereihten sogenannten Blöcken besteht. Jeder Block [...]"
+
+User: "Alexa, frage Block Explorer: Wie lang ist die Bitcoin Blockchain?"
 Alexa: "Die aktuelle Blockanzahl ist 458866"
 
-User: "Alexa, frage Block Explorer wie viele Transaktionen waren im letzten Block der Bitcoin Blockchain?"
+User: "Alexa, frage Block Explorer: Wie viele Transaktionen waren im letzten Block der Bitcoin Blockchain?"
 Alexa: "Die Anzahl der Transaktionen im letzten Block ist 2429"
 ```
 
