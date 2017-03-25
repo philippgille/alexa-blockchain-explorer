@@ -18,7 +18,7 @@ To run this skill you need to do two things. The first is to deploy the example 
 6. Select the runtime as Java 8
 7. Go to the the root directory containing pom.xml, and run 'mvn assembly:assembly -DdescriptorId=jar-with-dependencies package'. This will generate a zip file named "alexa-skills-kit-samples-1.0-jar-with-dependencies.jar" in the target directory.
 8. Select Code entry type as "Upload a .ZIP file" and then upload the "alexa-blockchain-explorer-1.0-jar-with-dependencies.jar" file from the build directory to Lambda
-9. Set the Handler as com.philippgille.alexaBlockchainExplorer.BlockchainExplorerSpeechletRequestStreamHandler (this refers to the Lambda RequestStreamHandler file in the zip).
+9. Set the Handler as com.philippgille.alexa.BlockchainExplorerSpeechletRequestStreamHandler (this refers to the Lambda RequestStreamHandler file in the zip).
 10. Create a basic execution role and click create.
 11. Leave the Advanced settings as the defaults.
 12. Click "Next" and review the settings then click "Create Function"
