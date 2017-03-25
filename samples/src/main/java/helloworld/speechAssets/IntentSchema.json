@@ -4,6 +4,9 @@
       "intent": "HelloWorldIntent"
     },
     {
+      "intent": "BlockCountIntent"
+    },
+    {
       "intent": "AMAZON.HelpIntent"
     }
   ]
