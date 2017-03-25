@@ -1,5 +1,5 @@
-alexa-skills-kit-java
-Copyright 2014-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+alexa-blockchain-explorer
+Copyright 2017 Philipp Gillé. All Rights Reserved.
 
 ============== Copyright and License Information for Third Party Software ==============
 

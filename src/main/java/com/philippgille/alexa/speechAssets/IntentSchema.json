@@ -1,0 +1,13 @@
+{
+  "intents": [
+    {
+      "intent": "BlockCountIntent"
+    },
+    {
+      "intent": "TransactionCountIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    }
+  ]
+}

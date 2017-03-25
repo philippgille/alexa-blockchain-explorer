@@ -1,28 +1,74 @@
-# Java Alexa Skills Kit SDK & Samples
+AWS Lambda function for the Alexa skill "Blockchain Explorer"
+==========================================================
 
-##Alexa Skills Kit Documentation
-The documentation for the Alexa Skills Kit is available on the [Amazon Apps and Services Developer Portal](https://developer.amazon.com/appsandservices/solutions/alexa/alexa-skills-kit/).
+A simple AWS Lambda function for an Alexa skill to ask about Blockchain data using the Alexa SDK.
 
-## Contents
-The included samples represent how to use Java AWS Lambda functions as Alexa Skills.
-The following samples are included (ordered by complexity, see the Using Alexa Skills Kit Samples
-link below for more details):
+First Time Setup
+----------------
 
-- HelloWorld: a simple skill that repeats Hello World! on user input
-- SpaceGeek : a simple skill that responds to the user with a space fact.
-- Session: a simple skill that asks for your favorite color, then repeats it back to you using session attributes.
-- MinecraftHelper : a simple skill that responds to the user's recipe queries with formulas.
-- WiseGuy : a skill that tells knock knock jokes.
-- HistoryBuff : a skill that gives historical information that happened on a user provided day.
-- Savvy Consumer : a skill that looks up a category on Amazon and returns the best selling products.
-- TidePooler : a skill that looks up tide information for various cities.
-- ScoreKeeper : a skill that can keep score of a game.
+To run this skill you need to do two things. The first is to deploy the example code in lambda, and the second is to configure the Alexa skill to use Lambda.
 
-## Usage
-Navigate to the README.md in each sub directory in the samples folder and follow the instructions for getting the sample up and running.
+### AWS Lambda Setup
 
-## Resources
-Here are a few direct links to our documentation:
+1. Go to the AWS Console and click on the Lambda link. Note: ensure you are in us-east or you wont be able to use Alexa with Lambda.
+2. Click on the Create a Lambda Function or Get Started Now button.
+3. Skip the blueprint
+4. Configure Triggers Screen click the outlined empty square and select Alexa Skill Kit.  Click Next
+5. Name the Lambda Function "BlockchainExplorer".
+6. Select the runtime as Java 8
+7. Go to the the root directory containing pom.xml, and run 'mvn assembly:assembly -DdescriptorId=jar-with-dependencies package'. This will generate a zip file named "alexa-skills-kit-samples-1.0-jar-with-dependencies.jar" in the target directory.
+8. Select Code entry type as "Upload a .ZIP file" and then upload the "alexa-blockchain-explorer-1.0-jar-with-dependencies.jar" file from the build directory to Lambda
+9. Set the Handler as com.philippgille.alexaBlockchainExplorer.BlockchainExplorerSpeechletRequestStreamHandler (this refers to the Lambda RequestStreamHandler file in the zip).
+10. Create a basic execution role and click create.
+11. Leave the Advanced settings as the defaults.
+12. Click "Next" and review the settings then click "Create Function"
+13. Copy the ARN from the top right to be used later in the Alexa Skill Setup.
+
+### Alexa Skill Setup
+
+1. Go to the [Alexa Console](https://developer.amazon.com/edw/home.html) and click Add a New Skill.
+2. Set "Blockchain Explorer" as the skill name and "block explorer" as the invocation name, this is what is used to activate your skill. For example you would say: "Alexa, tell block explorer to say hello."
+3. Select the Lambda ARN for the skill Endpoint and paste the ARN copied from above. Click Next.
+4. Copy the Intent Schema from the included IntentSchema.json.
+5. Copy the Sample Utterances from the included SampleUtterances.txt. Click Next.
+6. Go back to the skill Information tab and copy the appId. Paste the appId into a Lambda function code configuration environment variable called "APPLICATION_ID". This step makes sure the lambda function only serves request from authorized source.
+7. You are now able to start testing your sample skill! You should be able to go to the [Echo webpage](http://echo.amazon.com/#skills) and see your skill enabled.
+8. In order to test it, try to say some of the Sample Utterances from the Examples section below.
+9. Your skill is now saved and once you are finished testing you can continue to publish your skill.
+
+Usage Examples
+-------------
+
+### One-shot model:
+
+```
+User: "Alexa, frage Block Explorer wie lang ist die Bitcoin Blockchain?"
+Alexa: "Die aktuelle Blockanzahl ist 458866"
+
+User: "Alexa, frage Block Explorer wie viele Transaktionen waren im letzten Block der Bitcoin Blockchain?"
+Alexa: "Die Anzahl der Transaktionen im letzten Block ist 2429"
+```
+
+Subsequent iterations / builds
+------------------------------
+
+When the Lambda function and Alexa skill are set up according to the *First Time Setup* section above, subsequent iterations are much easier:
+
+1. Change the intent schema, utterances and code
+2. Package the code to a JAR with Maven: 'mvn assembly:assembly -DdescriptorId=jar-with-dependencies package'
+3. Upload the JAR to the Lambda function: [https://eu-west-1.console.aws.amazon.com/lambda/home?region=eu-west-1#/functions/BlockchainExplorer?tab=code]()
+4. Update the intent schema and utterances of the Alexa skill: [https://developer.amazon.com/edw/home.html#/skill/amzn1.ask.skill.\<some-id\>/de_DE/intentSchema]()
+
+License
+-------
+
+- Note that this software is licensed under the GPLv3. See the `LICENSE` file for details.
+- Some used software is license under the Apache Software License version 2.0. See the `NOTICE` file for details.
+
+Resources
+--------
+
+Here are a few direct links to the Alexa skill documentation:
 
 - [Using the Alexa Skills Kit Samples](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/using-the-alexa-skills-kit-samples)
 - [Getting Started](https://developer.amazon.com/appsandservices/solutions/alexa/alexa-skills-kit/getting-started-guide)
