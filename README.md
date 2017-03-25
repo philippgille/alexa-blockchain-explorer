@@ -56,14 +56,14 @@ When the Lambda function and Alexa skill are set up according to the *First Time
 
 1. Change the intent schema, utterances and code
 2. Package the code to a JAR with Maven: 'mvn assembly:assembly -DdescriptorId=jar-with-dependencies package'
-3. Upload the JAR to the Lambda function: [https://eu-west-1.console.aws.amazon.com/lambda/home?region=eu-west-1#/functions/BlockchainExplorer?tab=code]()
-4. Update the intent schema and utterances of the Alexa skill: [https://developer.amazon.com/edw/home.html#/skill/amzn1.ask.skill.\<some-id\>/de_DE/intentSchema]()
+3. Upload the JAR to the Lambda function: [https://eu-west-1.console.aws.amazon.com/lambda/home?region=eu-west-1#/functions/BlockchainExplorer?tab=code](https://eu-west-1.console.aws.amazon.com/lambda/home?region=eu-west-1#/functions/BlockchainExplorer?tab=code)
+4. Update the intent schema and utterances of the Alexa skill: [https://developer.amazon.com/edw/home.html#/skill/amzn1.ask.skill.\<some-id\>/de_DE/intentSchema](https://developer.amazon.com/edw/home.html#/skill/amzn1.ask.skill.\<some-id\>/de_DE/intentSchema)
 
 License
 -------
 
-- Note that this software is licensed under the GPLv3. See the `LICENSE` file for details.
-- Some used software is license under the Apache Software License version 2.0. See the `NOTICE` file for details.
+- Note that this software is licensed under the GNU General Public License version 3. See the `LICENSE` file for details.
+- Some used software is licensed under the Apache Software License version 2.0. See the `NOTICE` file for details.
 
 Resources
 --------
