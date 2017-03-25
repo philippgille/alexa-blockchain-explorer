@@ -3,6 +3,19 @@ AWS Lambda function for the Alexa skill "Blockchain Explorer"
 
 A simple AWS Lambda function for an Alexa skill to ask about Blockchain data using the Alexa SDK.
 
+Usage Examples
+-------------
+
+### One-shot model:
+
+```
+User: "Alexa, frage Block Explorer wie lang ist die Bitcoin Blockchain?"
+Alexa: "Die aktuelle Blockanzahl ist 458866"
+
+User: "Alexa, frage Block Explorer wie viele Transaktionen waren im letzten Block der Bitcoin Blockchain?"
+Alexa: "Die Anzahl der Transaktionen im letzten Block ist 2429"
+```
+
 First Time Setup
 ----------------
 
@@ -35,19 +48,6 @@ To run this skill you need to do two things. The first is to deploy the example 
 7. You are now able to start testing your sample skill! You should be able to go to the [Echo webpage](http://echo.amazon.com/#skills) and see your skill enabled.
 8. In order to test it, try to say some of the Sample Utterances from the Examples section below.
 9. Your skill is now saved and once you are finished testing you can continue to publish your skill.
-
-Usage Examples
--------------
-
-### One-shot model:
-
-```
-User: "Alexa, frage Block Explorer wie lang ist die Bitcoin Blockchain?"
-Alexa: "Die aktuelle Blockanzahl ist 458866"
-
-User: "Alexa, frage Block Explorer wie viele Transaktionen waren im letzten Block der Bitcoin Blockchain?"
-Alexa: "Die Anzahl der Transaktionen im letzten Block ist 2429"
-```
 
 Subsequent iterations / builds
 ------------------------------
