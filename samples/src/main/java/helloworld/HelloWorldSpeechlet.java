@@ -9,7 +9,6 @@
  */
 package helloworld;
 
-import org.apache.http.client.fluent.Request;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,7 +24,6 @@ import com.amazon.speech.speechlet.SpeechletResponse;
 import com.amazon.speech.ui.PlainTextOutputSpeech;
 import com.amazon.speech.ui.Reprompt;
 import com.amazon.speech.ui.SimpleCard;
-import com.amazonaws.util.json.JSONObject;
 
 /**
  * This sample shows how to create a simple speechlet for handling speechlet requests.
@@ -62,6 +60,8 @@ public class HelloWorldSpeechlet implements Speechlet {
             return getHelloResponse();
         } else if ("BlockCountIntent".equals(intentName)) {
         	return getBlockCountResponse();
+        } else if ("TransactionCountIntent".equals(intentName)) {
+        	return getTransactionCountResponse();
         } else if ("AMAZON.HelpIntent".equals(intentName)) {
             return getHelpResponse();
         } else {
@@ -83,11 +83,13 @@ public class HelloWorldSpeechlet implements Speechlet {
      * @return SpeechletResponse spoken and visual response for the given intent
      */
     private SpeechletResponse getWelcomeResponse() {
-        String speechText = "Willkommen beim Blockchain Explorer Alexa Skill. Du kannst hallo sagen.";
+        String speechText = "Willkommen beim Blockchain Explorer Alexa Skill." +
+        		" Du kannst mich fragen wie lang die Bitcoin Blockchain ist" +
+        		" oder wie viele Transaktionen im letzten Block der Bitcoin Blockchain waren.";
 
         // Create the Simple card content.
         SimpleCard card = new SimpleCard();
-        card.setTitle("Blockchain Explorer");
+        card.setTitle("Willkommen");
         card.setContent(speechText);
 
         // Create the plain text output.
@@ -111,7 +113,7 @@ public class HelloWorldSpeechlet implements Speechlet {
 
         // Create the Simple card content.
         SimpleCard card = new SimpleCard();
-        card.setTitle("Blockchain Explorer");
+        card.setTitle("Hallo Welt");
         card.setContent(speechText);
 
         // Create the plain text output.
@@ -128,17 +130,7 @@ public class HelloWorldSpeechlet implements Speechlet {
 	 */
 	private SpeechletResponse getBlockCountResponse() {
 		// Fetch the current block count from the API
-		long blockCount = Long.MIN_VALUE;
-		try {
-			String response = Request.Get("https://api.smartbit.com.au/v1/blockchain/totals")
-				.execute()
-				.returnContent()
-				.asString();
-			JSONObject responseJson = new JSONObject(response);
-			blockCount = responseJson.getJSONObject("totals").getLong("block_count");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		long blockCount = ApiClient.fetchBlockCount();
 		
 		String speechText = "Es ist ein Fehler beim Abfragen der Blockanzahl aufgetreten.";    	
 		// If anything failed, blockCount is Long.MIN_VALUE. So set a response only if that's *not* the case.
@@ -159,17 +151,46 @@ public class HelloWorldSpeechlet implements Speechlet {
 	    return SpeechletResponse.newTellResponse(speech, card);
 	}
 
+	/**
+	 * Creates a {@code SpeechletResponse} for the transaction count intent.
+	 *
+	 * @return SpeechletResponse spoken and visual response for the given intent
+	 */
+	private SpeechletResponse getTransactionCountResponse() {
+		// Fetch the transaction count of the latest block from the API
+		long transactionCount = ApiClient.fetchTransactionCount();
+		
+		String speechText = "Es ist ein Fehler beim Abfragen der Transaktionsanzahl aufgetreten.";    	
+		// If anything failed, transactionCount is Long.MIN_VALUE. So set a response only if that's *not* the case.
+		if (transactionCount != Long.MIN_VALUE)
+		{
+			speechText = "Die Anzahl der Transaktionen im letzten Block ist " + transactionCount;
+		}
+	
+	    // Create the Simple card content.
+	    SimpleCard card = new SimpleCard();
+	    card.setTitle("Transaktionsanzahl im letzten Block der Bitcoin Blockchain");
+	    card.setContent(speechText);
+	
+	    // Create the plain text output.
+	    PlainTextOutputSpeech speech = new PlainTextOutputSpeech();
+	    speech.setText(speechText);
+	
+	    return SpeechletResponse.newTellResponse(speech, card);
+	}
+
     /**
      * Creates a {@code SpeechletResponse} for the help intent.
      *
      * @return SpeechletResponse spoken and visual response for the given intent
      */
     private SpeechletResponse getHelpResponse() {
-        String speechText = "Du kannst mich fragen, wie lang die Bitcon Blockchain ist!";
+        String speechText = "Du kannst mich fragen wie lang die Bitcoin Blockchain ist" +
+        		" oder wie viele Transaktionen im letzten Block der Bitcoin Blockchain waren.";
 
         // Create the Simple card content.
         SimpleCard card = new SimpleCard();
-        card.setTitle("Blockchain Explorer");
+        card.setTitle("Hilfe");
         card.setContent(speechText);
 
         // Create the plain text output.
