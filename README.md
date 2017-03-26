@@ -35,7 +35,7 @@ To run this skill you need to do two things. The first is to deploy the example 
 4. Configure Triggers Screen click the outlined empty square and select Alexa Skill Kit.  Click Next
 5. Name the Lambda Function "BlockchainExplorer".
 6. Select the runtime as Java 8
-7. Go to the the root directory containing pom.xml, and run 'mvn assembly:assembly -DdescriptorId=jar-with-dependencies package'. This will generate a zip file named "alexa-skills-kit-samples-1.0-jar-with-dependencies.jar" in the target directory.
+7. On your PC, run 'docker run --rm -v /path/to/pom-dir:/usr/src/mymaven philippgille/alexa-java-builder'. This will generate a zip file named "alexa-blockchain-explorer-1.0-jar-with-dependencies.jar" in `/path/to/pom-dir/target`.
 8. Select Code entry type as "Upload a .ZIP file" and then upload the "alexa-blockchain-explorer-1.0-jar-with-dependencies.jar" file from the build directory to Lambda
 9. Set the Handler as com.philippgille.alexa.BlockchainExplorerSpeechletRequestStreamHandler (this refers to the Lambda RequestStreamHandler file in the zip).
 10. Create a basic execution role and click create.
@@ -61,9 +61,9 @@ Subsequent iterations / builds
 When the Lambda function and Alexa skill are set up according to the *First Time Setup* section above, subsequent iterations are much easier:
 
 1. Change the intent schema, utterances and code
-2. Package the code to a JAR with Maven: 'mvn assembly:assembly -DdescriptorId=jar-with-dependencies package'
+2. Package the code to a JAR with Maven: 'docker run --rm -v /path/to/pom-dir:/usr/src/mymaven philippgille/alexa-java-builder'
 3. Upload the JAR to the Lambda function: [https://eu-west-1.console.aws.amazon.com/lambda/home?region=eu-west-1#/functions/BlockchainExplorer?tab=code](https://eu-west-1.console.aws.amazon.com/lambda/home?region=eu-west-1#/functions/BlockchainExplorer?tab=code)
-4. Update the intent schema and utterances of the Alexa skill: [https://developer.amazon.com/edw/home.html#/skill/amzn1.ask.skill.\<some-id\>/de_DE/intentSchema](https://developer.amazon.com/edw/home.html#/skill/amzn1.ask.skill.\<some-id\>/de_DE/intentSchema)
+4. Update the intent schema and utterances of the Alexa skill: [https://developer.amazon.com/edw/home.html#/skill/amzn1.ask.skill.\<some-id\>/de_DE/intentSchema](https://developer.amazon.com/edw/home.html#/skill/amzn1.ask.skill.\<some-id\>/de_DE/intentSchema) (replace `<some-id>` with your skill's ID)
 
 License
 -------
@@ -80,3 +80,7 @@ Here are a few direct links to the Alexa skill documentation:
 - [Getting Started](https://developer.amazon.com/appsandservices/solutions/alexa/alexa-skills-kit/getting-started-guide)
 - [Invocation Name Guidelines](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/choosing-the-invocation-name-for-an-alexa-skill)
 - [Developing an Alexa Skill as an AWS Lambda Function](https://developer.amazon.com/appsandservices/solutions/alexa/alexa-skills-kit/docs/developing-an-alexa-skill-as-a-lambda-function)
+
+Info about the Docker container used to build the skill JAR:
+
+- [https://hub.docker.com/r/philippgille/alexa-java-builder/](https://hub.docker.com/r/philippgille/alexa-java-builder/)
