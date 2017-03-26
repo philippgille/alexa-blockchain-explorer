@@ -12,6 +12,9 @@ Usage Examples
 User: "Alexa, frage Block Explorer: Was ist eine Blockchain?"
 Alexa: "Eine Blockchain ist eine verteilte Datenbank, welche aus aneinandergereihten sogenannten Blöcken besteht. Jeder Block [...]"
 
+User: "Alexa, frage Block Explorer: Was ist Bitcoin?"
+Alexa: "Bitcoin ist eine dezentrale digitale Kryptowährung, die von Satoshi Nakamoto erfunden und [...]"
+
 User: "Alexa, frage Block Explorer: Wie lang ist die Bitcoin Blockchain?"
 Alexa: "Die aktuelle Blockanzahl ist 458866"
 
