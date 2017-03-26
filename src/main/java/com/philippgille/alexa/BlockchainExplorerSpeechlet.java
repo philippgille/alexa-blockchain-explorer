@@ -92,11 +92,6 @@ public class BlockchainExplorerSpeechlet implements Speechlet {
         		" wie lang die Bitcoin Blockchain ist," +
         		" oder wie viele Transaktionen im letzten Block der Bitcoin Blockchain waren.";
 
-        // Create the Simple card content.
-        SimpleCard card = new SimpleCard();
-        card.setTitle("Willkommen");
-        card.setContent(speechText);
-
         // Create the plain text output.
         PlainTextOutputSpeech speech = new PlainTextOutputSpeech();
         speech.setText(speechText);
@@ -104,6 +99,11 @@ public class BlockchainExplorerSpeechlet implements Speechlet {
         // Create reprompt
         Reprompt reprompt = new Reprompt();
         reprompt.setOutputSpeech(speech);
+        
+        // Create the Simple card content.
+        SimpleCard card = new SimpleCard();
+        card.setTitle("Willkommen");
+        card.setContent(speechText);
 
         return SpeechletResponse.newAskResponse(speech, reprompt, card);
     }
@@ -124,15 +124,15 @@ public class BlockchainExplorerSpeechlet implements Speechlet {
 			speechText = "Die aktuelle Blockanzahl ist " + blockCount;
 		}
 	
+		// Create the plain text output.
+		PlainTextOutputSpeech speech = new PlainTextOutputSpeech();
+		speech.setText(speechText);
+	    
 	    // Create the Simple card content.
 	    SimpleCard card = new SimpleCard();
 	    card.setTitle("Länge der Bitcoin Blockchain");
 	    card.setContent(speechText);
-	
-	    // Create the plain text output.
-	    PlainTextOutputSpeech speech = new PlainTextOutputSpeech();
-	    speech.setText(speechText);
-	
+	    
 	    return SpeechletResponse.newTellResponse(speech, card);
 	}
 
@@ -152,14 +152,14 @@ public class BlockchainExplorerSpeechlet implements Speechlet {
 			speechText = "Die Anzahl der Transaktionen im letzten Block ist " + transactionCount;
 		}
 	
+	    // Create the plain text output.
+	    PlainTextOutputSpeech speech = new PlainTextOutputSpeech();
+	    speech.setText(speechText);
+	    
 	    // Create the Simple card content.
 	    SimpleCard card = new SimpleCard();
 	    card.setTitle("Transaktionsanzahl im letzten Block der Bitcoin Blockchain");
 	    card.setContent(speechText);
-	
-	    // Create the plain text output.
-	    PlainTextOutputSpeech speech = new PlainTextOutputSpeech();
-	    speech.setText(speechText);
 	
 	    return SpeechletResponse.newTellResponse(speech, card);
 	}
@@ -187,14 +187,14 @@ public class BlockchainExplorerSpeechlet implements Speechlet {
 				" Es gibt auch private Blockchains, welche andere Regeln enthalten können als die, die üblicherweise zur Definition des Begriffs Blockchain gehören." +
 				" Als Beispiel seien genannt: HyperLedger vom IBM und der Linux Foundation, Linq von NASDAQ, Corda von R3 CEV, MultiChain, T0 und BigchainDB.";
 	
+	    // Create the plain text output.
+	    PlainTextOutputSpeech speech = new PlainTextOutputSpeech();
+	    speech.setText(speechText);
+	    
 	    // Create the Simple card content.
 	    SimpleCard card = new SimpleCard();
 	    card.setTitle("Was ist eine Blockchain?");
 	    card.setContent(speechText);
-	
-	    // Create the plain text output.
-	    PlainTextOutputSpeech speech = new PlainTextOutputSpeech();
-	    speech.setText(speechText);
 	
 	    return SpeechletResponse.newTellResponse(speech, card);
 	}
@@ -216,15 +216,15 @@ public class BlockchainExplorerSpeechlet implements Speechlet {
 							" Bitcoins entstehen durch den Prozess, Blöcke zu erstellen, welche der Bitcoin Blockchain hinzugefügt werden." +
 							" Die sogenannten Miner, die diesen Prozess durchführen, müssen dazu kryptografische Berechnungen durchführen, welche sich später von allen Knoten im Netzwerk verifizieren lassen, und erhalten dafür pro Block eine sogenannte Block-Belohnung." +
 							" Durch Angebot und Nachfrage schwankt der Wert eines Bitcoin immer wieder, und da Bitcoins über Bitcoin-Börsen in Fiat-Währung wie Euro oder US Dollar umgetauscht werden können, kann auch mit dem Wert von Bitcoins spekuliert werden.";
-
-		// Create the Simple card content.
-	    SimpleCard card = new SimpleCard();
-	    card.setTitle("Was ist Bitcoin?");
-	    card.setContent(speechText);
 	
 	    // Create the plain text output.
 	    PlainTextOutputSpeech speech = new PlainTextOutputSpeech();
 	    speech.setText(speechText);
+	    
+	    // Create the Simple card content.
+	    SimpleCard card = new SimpleCard();
+	    card.setTitle("Was ist Bitcoin?");
+	    card.setContent(speechText);
 	
 	    return SpeechletResponse.newTellResponse(speech, card);
 	}
@@ -239,11 +239,6 @@ public class BlockchainExplorerSpeechlet implements Speechlet {
         		" wie lang die Bitcoin Blockchain ist," +
         		" oder wie viele Transaktionen im letzten Block der Bitcoin Blockchain waren.";
 
-        // Create the Simple card content.
-        SimpleCard card = new SimpleCard();
-        card.setTitle("Hilfe");
-        card.setContent(speechText);
-
         // Create the plain text output.
         PlainTextOutputSpeech speech = new PlainTextOutputSpeech();
         speech.setText(speechText);
@@ -251,6 +246,11 @@ public class BlockchainExplorerSpeechlet implements Speechlet {
         // Create reprompt
         Reprompt reprompt = new Reprompt();
         reprompt.setOutputSpeech(speech);
+        
+        // Create the Simple card content.
+        SimpleCard card = new SimpleCard();
+        card.setTitle("Hilfe");
+        card.setContent(speechText);
 
         return SpeechletResponse.newAskResponse(speech, reprompt, card);
     }
