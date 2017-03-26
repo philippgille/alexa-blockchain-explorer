@@ -66,6 +66,8 @@ public class BlockchainExplorerSpeechlet implements Speechlet {
         	return getWhatIsBitcoinResponse();
         } else if ("AMAZON.HelpIntent".equals(intentName)) {
             return getHelpResponse();
+        } else if ("AMAZON.CancelIntent".equals(intentName) || "AMAZON.StopIntent".equals(intentName)) {
+        	return stop();
         } else {
             throw new SpeechletException("Invalid Intent");
         }
@@ -86,7 +88,7 @@ public class BlockchainExplorerSpeechlet implements Speechlet {
      */
     private SpeechletResponse getWelcomeResponse() {
         String speechText = "Willkommen beim Blockchain Explorer Alexa Skill." +
-        		" Du kannst mich fragen was eine Blockchain ist," +
+        		" Du kannst mich zum Beispiel fragen was eine Blockchain ist," +
         		" wie lang die Bitcoin Blockchain ist," +
         		" oder wie viele Transaktionen im letzten Block der Bitcoin Blockchain waren.";
 
@@ -233,7 +235,7 @@ public class BlockchainExplorerSpeechlet implements Speechlet {
      * @return SpeechletResponse spoken and visual response for the given intent
      */
     private SpeechletResponse getHelpResponse() {
-        String speechText = "Du kannst mich fragen was eine Blockchain ist," +
+        String speechText = "Du kannst mich zum Beispiel fragen was eine Blockchain ist," +
         		" wie lang die Bitcoin Blockchain ist," +
         		" oder wie viele Transaktionen im letzten Block der Bitcoin Blockchain waren.";
 
@@ -252,4 +254,24 @@ public class BlockchainExplorerSpeechlet implements Speechlet {
 
         return SpeechletResponse.newAskResponse(speech, reprompt, card);
     }
+
+	/**
+	 * Creates a {@code SpeechletResponse} for the cancel and stop intent.
+	 *
+	 * @return SpeechletResponse spoken and visual response for the given intent
+	 */
+	private SpeechletResponse stop() {
+		String speechText = "Bis zum nächsten Mal";
+		
+        // Create the plain text output.
+        PlainTextOutputSpeech speech = new PlainTextOutputSpeech();
+        speech.setText(speechText);
+
+        // Create the Simple card content.
+        SimpleCard card = new SimpleCard();
+        card.setTitle("Stop");
+        card.setContent(speechText);
+
+        return SpeechletResponse.newTellResponse(speech, card);
+	}
 }
