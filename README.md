@@ -35,9 +35,9 @@ To run this skill you need to do two things. The first is to deploy the example 
 4. Configure Triggers Screen click the outlined empty square and select Alexa Skill Kit.  Click Next
 5. Name the Lambda Function "BlockchainExplorer".
 6. Select the runtime as Java 8
-7. On your PC, run 'docker run --rm -v /path/to/pom-dir:/usr/src/mymaven philippgille/alexa-java-builder'. This will generate a zip file named "alexa-blockchain-explorer-1.0-jar-with-dependencies.jar" in `/path/to/pom-dir/target`.
-8. Select Code entry type as "Upload a .ZIP file" and then upload the "alexa-blockchain-explorer-1.0-jar-with-dependencies.jar" file from the build directory to Lambda
-9. Set the Handler as com.philippgille.alexa.BlockchainExplorerSpeechletRequestStreamHandler (this refers to the Lambda RequestStreamHandler file in the zip).
+7. Download or clone this repository and run `docker run --rm -v /path/to/pom-dir:/usr/src/mymaven philippgille/alexa-java-builder`. This will generate the zip file `/path/to/pom-dir/target/alexa-blockchain-explorer-1.0-jar-with-dependencies.jar`.
+8. Select Code entry type as "Upload a .ZIP file" and then upload the `alexa-blockchain-explorer-1.0-jar-with-dependencies.jar` file from the build directory to Lambda
+9. Set the Handler as `com.philippgille.alexa.BlockchainExplorerSpeechletRequestStreamHandler` (this refers to the Lambda RequestStreamHandler file in the zip).
 10. Create a basic execution role and click create.
 11. Leave the Advanced settings as the defaults.
 12. Click "Next" and review the settings then click "Create Function"
@@ -50,7 +50,7 @@ To run this skill you need to do two things. The first is to deploy the example 
 3. Select the Lambda ARN for the skill Endpoint and paste the ARN copied from above. Click Next.
 4. Copy the Intent Schema from the included IntentSchema.json.
 5. Copy the Sample Utterances from the included SampleUtterances.txt. Click Next.
-6. Go back to the skill Information tab and copy the appId. Paste the appId into a Lambda function code configuration environment variable called "APPLICATION_ID". This step makes sure the lambda function only serves request from authorized source.
+6. Go back to the skill Information tab and copy the appId. Paste the appId into a Lambda function code configuration environment variable called `APPLICATION_ID`. This step makes sure the lambda function only serves request from authorized source.
 7. You are now able to start testing your sample skill! You should be able to go to the [Echo webpage](http://echo.amazon.com/#skills) and see your skill enabled.
 8. In order to test it, try to say some of the Sample Utterances from the Examples section below.
 9. Your skill is now saved and once you are finished testing you can continue to publish your skill.
