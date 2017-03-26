@@ -1,7 +1,7 @@
-AWS Lambda function for the Alexa skill "Blockchain Explorer"
+AWS Lambda function for the **Blockchain Explorer** Alexa skill
 ==========================================================
 
-A simple AWS Lambda function for an Alexa skill to ask about Blockchain data using the Alexa SDK.
+A simple AWS Lambda function for an Alexa skill to ask about Blockchain data using the Alexa Skills Kit Java SDK.
 
 Usage Examples
 -------------
