@@ -163,7 +163,7 @@ public class BlockchainExplorerSpeechlet implements Speechlet {
 	}
 
 	/**
-	 * Creates a {@code SpeechletResponse} for the what is a blockchain intent.
+	 * Creates a {@code SpeechletResponse} for the what is a Blockchain intent.
 	 *
 	 * @return SpeechletResponse spoken and visual response for the given intent
 	 */
@@ -175,10 +175,15 @@ public class BlockchainExplorerSpeechlet implements Speechlet {
 				" Außerdem sind Blockchains so designt, dass die Daten bestehender Blöcke im Nachinein nicht mehr geändert werden können." +
 				" Blockchains werden durch ein Peer-to-Peer Netzwerk autonom verwaltet, das heißt es gibt keine zentrale Entität, welche eine Blockchain steuert." +
 				" Durch diese vorgenannten Punkte wird erreicht, dass sich zwei Parteien, zwischen denen eine Transaktion stattfindet, weder gegenseitig, noch einer zentralen Entität vertrauen müssen." +
+				" Die Daten in einer Blockchain sind damit auch zensur- und fälschungsresistent." +
 				" Durch einen Proof-of-Work Algorithmus können Double-Spends verhindert und auf dezentrale Art und Weise ein Konsens im Netzwerk geschaffen werden." +
-				" Die erste Blockchain wurde entwickelt von Satoshi Nakamoto und für die ebenfalls von ihm entwickelte digitale Währung Bitcoin verwendet." +
+				" Die erste Blockchain wurde im Jahr 2009 von Satoshi Nakamoto als Open Source Software veröffentlicht und für die ebenfalls von ihm entwickelte digitale Währung Bitcoin verwendet." +
 				" Sie wird aufgrund ihrer Reife, der höchsten Hashrate und den vielen erfahrenen Core-Entwicklern als sicherste Blockchain angesehen." +
-				" Bitcoin ist außerdem die digitale Währung mit der höchsten Marktkapitalisierung.";
+				" Bitcoin ist außerdem die digitale Währung mit der höchsten Marktkapitalisierung." +
+				" Weitere populäre öffentliche Blockchains sind unter anderem Ethereum, Ripple, Monero, Augur, MaidSafe, Iconomi, Zcash, Storj und NXT." +
+				" Diese können zusätzliche Features haben wie vollständige Anonymität oder Smart Contracts, welche in einer touring-vollständigen Programmiersprache geschrieben werden können." +
+				" Es gibt auch private Blockchains, welche andere Regeln enthalten können als die, die üblicherweise zur Definition des Begriffs Blockchain gehören." +
+				" Als Beispiel seien genannt: HyperLedger vom IBM und der Linux Foundation, Linq von NASDAQ, Corda von R3 CEV, MultiChain, T0 und BigchainDB.";
 	
 	    // Create the Simple card content.
 	    SimpleCard card = new SimpleCard();
