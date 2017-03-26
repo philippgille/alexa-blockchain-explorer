@@ -61,7 +61,7 @@ Subsequent iterations / builds
 When the Lambda function and Alexa skill are set up according to the *First Time Setup* section above, subsequent iterations are much easier:
 
 1. Change the intent schema, utterances and code
-2. Package the code to a JAR with Maven: 'docker run --rm -v /path/to/pom-dir:/usr/src/mymaven philippgille/alexa-java-builder'
+2. Package the code to a JAR with Maven: `docker run --rm -v /path/to/pom-dir:/usr/src/mymaven philippgille/alexa-java-builder`
 3. Upload the JAR to the Lambda function: [https://eu-west-1.console.aws.amazon.com/lambda/home?region=eu-west-1#/functions/BlockchainExplorer?tab=code](https://eu-west-1.console.aws.amazon.com/lambda/home?region=eu-west-1#/functions/BlockchainExplorer?tab=code)
 4. Update the intent schema and utterances of the Alexa skill: [https://developer.amazon.com/edw/home.html#/skill/amzn1.ask.skill.\<some-id\>/de_DE/intentSchema](https://developer.amazon.com/edw/home.html#/skill/amzn1.ask.skill.\<some-id\>/de_DE/intentSchema) (replace `<some-id>` with your skill's ID)
 
