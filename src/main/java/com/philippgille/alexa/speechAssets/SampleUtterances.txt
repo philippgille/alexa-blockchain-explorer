@@ -117,3 +117,28 @@ WhatIsBlockchainIntent erläutere mir Blockchain
 WhatIsBlockchainIntent erläutere mir was eine Blockchain ist
 WhatIsBlockchainIntent was ist Blockchain
 WhatIsBlockchainIntent was ist eine Blockchain
+
+WhatIsBitcoinIntent definiere Bitcoin
+WhatIsBitcoinIntent definiere mir Bitcoin
+WhatIsBitcoinIntent definiere mir was Bitcoin ist
+WhatIsBitcoinIntent definiere mir was ein Bitcoin ist
+WhatIsBitcoinIntent definiere was Bitcoin ist
+WhatIsBitcoinIntent definiere was ein Bitcoin ist
+WhatIsBitcoinIntent erkläre mir Bitcoin
+WhatIsBitcoinIntent erkläre mir was Bitcoin ist
+WhatIsBitcoinIntent erkläre mir was ein Bitcoin ist
+WhatIsBitcoinIntent erläutere mir Bitcoin
+WhatIsBitcoinIntent erläutere mir was Bitcoin ist
+WhatIsBitcoinIntent erläutere mir was ein Bitcoin ist
+WhatIsBitcoinIntent was ist Bitcoin
+WhatIsBitcoinIntent was ist ein Bitcoin
+
+WhatIsBitcoinIntent definiere Bitcoin Blockchain
+WhatIsBitcoinIntent definiere mir Bitcoin Blockchain
+WhatIsBitcoinIntent definiere mir was die Bitcoin Blockchain ist
+WhatIsBitcoinIntent definiere was die Bitcoin Blockchain ist
+WhatIsBitcoinIntent erkläre mir die Bitcoin Blockchain
+WhatIsBitcoinIntent erkläre mir was die Bitcoin Blockchain ist
+WhatIsBitcoinIntent erläutere mir die Bitcoin Blockchain
+WhatIsBitcoinIntent erläutere mir was die Bitcoin Blockchain
+WhatIsBitcoinIntent was ist die Bitcoin Blockchain

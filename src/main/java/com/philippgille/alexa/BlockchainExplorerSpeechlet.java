@@ -62,6 +62,8 @@ public class BlockchainExplorerSpeechlet implements Speechlet {
         	return getTransactionCountResponse();
         } else if ("WhatIsBlockchainIntent".equals(intentName)) {
         	return getWhatIsBlockchainResponse();
+        } else if ("WhatIsBitcoinIntent".equals(intentName)) {
+        	return getWhatIsBitcoinResponse();
         } else if ("AMAZON.HelpIntent".equals(intentName)) {
             return getHelpResponse();
         } else {
@@ -84,7 +86,8 @@ public class BlockchainExplorerSpeechlet implements Speechlet {
      */
     private SpeechletResponse getWelcomeResponse() {
         String speechText = "Willkommen beim Blockchain Explorer Alexa Skill." +
-        		" Du kannst mich fragen wie lang die Bitcoin Blockchain ist" +
+        		" Du kannst mich fragen was eine Blockchain ist," +
+        		" wie lang die Bitcoin Blockchain ist," +
         		" oder wie viele Transaktionen im letzten Block der Bitcoin Blockchain waren.";
 
         // Create the Simple card content.
@@ -189,13 +192,44 @@ public class BlockchainExplorerSpeechlet implements Speechlet {
 	    return SpeechletResponse.newTellResponse(speech, card);
 	}
 
+	/**
+	 * Creates a {@code SpeechletResponse} for the what is Bitcoin intent.
+	 *
+	 * @return SpeechletResponse spoken and visual response for the given intent
+	 */
+	private SpeechletResponse getWhatIsBitcoinResponse() {
+		String speechText = "Bitcoin ist eine dezentrale digitale Kryptowährung, die von Satoshi Nakamoto erfunden und 2009 als Open Source Software veröffentlicht wurde." +
+							" Die darunterliegende Technologie ist eine Blockchain, welche als verteiltes Bestandsbuch fungiert." +
+							" Sie ermöglicht den Teilnehmern untereinander Transaktionen auszutauschen, welche direkt, und nicht über einen Mittelsmann stattfinden." +
+							" Die Transaktionen sind öffentlich, werden von Netzwerkknoten verifiziert und für alle und für immer nachvollziehbar in einem Blockchain Block gespeichert." +
+							" Ein Block wird durchschnittlich alle 10 Minuten der Blockchain hinzugefügt." +
+							" Erst wenn eine Transaktion in einem Block enthalten ist, wird sie als bestätigt angesehen." +
+							" Die Daten in der Blockchain sind zensur- und fälschungsresistent, und Transaktionen können von Teilnehmern getätigt werden, ohne dass ihre Identität dadurch bekannt wird." +
+							" Die Bitcoin Blockchain wird aufgrund ihrer Reife, der höchsten Hashrate und den vielen erfahrenen Core-Entwicklern als sicherste Blockchain angesehen." +
+							" Bitcoins entstehen durch den Prozess, Blöcke zu erstellen, welche der Bitcoin Blockchain hinzugefügt werden." +
+							" Die sogenannten Miner, die diesen Prozess durchführen, müssen dazu kryptografische Berechnungen durchführen, welche sich später von allen Knoten im Netzwerk verifizieren lassen, und erhalten dafür pro Block eine sogenannte Block-Belohnung." +
+							" Durch Angebot und Nachfrage schwankt der Wert eines Bitcoin immer wieder, und da Bitcoins über Bitcoin-Börsen in Fiat-Währung wie Euro oder US Dollar umgetauscht werden können, kann auch mit dem Wert von Bitcoins spekuliert werden.";
+
+		// Create the Simple card content.
+	    SimpleCard card = new SimpleCard();
+	    card.setTitle("Was ist Bitcoin?");
+	    card.setContent(speechText);
+	
+	    // Create the plain text output.
+	    PlainTextOutputSpeech speech = new PlainTextOutputSpeech();
+	    speech.setText(speechText);
+	
+	    return SpeechletResponse.newTellResponse(speech, card);
+	}
+
     /**
      * Creates a {@code SpeechletResponse} for the help intent.
      *
      * @return SpeechletResponse spoken and visual response for the given intent
      */
     private SpeechletResponse getHelpResponse() {
-        String speechText = "Du kannst mich fragen wie lang die Bitcoin Blockchain ist" +
+        String speechText = "Du kannst mich fragen was eine Blockchain ist," +
+        		" wie lang die Bitcoin Blockchain ist," +
         		" oder wie viele Transaktionen im letzten Block der Bitcoin Blockchain waren.";
 
         // Create the Simple card content.

@@ -10,6 +10,9 @@
       "intent": "WhatIsBlockchainIntent"
     },
     {
+      "intent": "WhatIsBitcoinIntent"
+    },
+    {
       "intent": "AMAZON.HelpIntent"
     }
   ]
